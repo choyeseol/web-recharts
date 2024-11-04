@@ -1,26 +1,53 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import styled from "styled-components";
+import LineChart from "./components/LineChart";
 
 function App() {
+  const metew = [
+    { name: "3월", uv: 400, pv: 200, amt: 200 },
+    { name: "4월", uv: 100, pv: 2400, amt: 200 },
+    { name: "5월", uv: 200, pv: 2400, amt: 200 },
+    { name: "6월", uv: 300, pv: 2400, amt: 200 },
+    { name: "7월", uv: 200, pv: 2400, amt: 200 },
+    { name: "8월", uv: 500, pv: 2400, amt: 200 },
+    { name: "9월", uv: 500, pv: 2400, amt: 200 },
+    { name: "10월", uv: 500, pv: 2400, amt: 200 },
+  ]; 
+
+  const kim = [
+    { name: "3월", uv: 400, pv: 200, amt: 200 },
+    { name: "4월", uv: 100, pv: 2400, amt: 200 },
+    { name: "5월", uv: 200, pv: 2400, amt: 200 },
+    { name: "6월", uv: 300, pv: 2400, amt: 200 },
+    { name: "7월", uv: 200, pv: 2400, amt: 200 },
+    { name: "8월", uv: 500, pv: 2400, amt: 200 },
+    { name: "9월", uv: 500, pv: 2400, amt: 200 },
+    { name: "10월", uv: 500, pv: 2400, amt: 200 },
+  ];
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Apppage>
+      <h1>데이터 시각화</h1>
+      <Column>
+        <LineChart data={metew} />
+        <LineChart data={kim} />
+      </Column>
+    </Apppage>
   );
 }
 
 export default App;
+
+const Apppage = styled.div`
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+`;
+
+const Column = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+`;
